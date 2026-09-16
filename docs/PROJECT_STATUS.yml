@@ -1,0 +1,20 @@
+schema_version: 1
+project_id: E
+project_stage: exploratory
+proposal_status: mutable
+governance_status: working_draft
+design_freeze: false
+analysis_freeze: false
+interpretation_freeze: false
+human_approvals: {}
+approved_releases: []
+proposal_source:
+  path: init_doc.pdf
+  sha256: 7fba23c4a387fd3dabf686b65de4999515326dcca91230d00e96a5199046febb
+decisions:
+- id: E-BOOTSTRAP
+  status: ACTIVE
+  kind: governance
+  description: Initial proposal recorded as provisional; no scientific freeze.
+  human_approval: null
+proposal_revisions: []

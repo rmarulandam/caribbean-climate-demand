@@ -1,0 +1,47 @@
+# Raw/private/large research data
+data/raw/
+data/intermediate/
+data/private/
+*.parquet
+*.feather
+*.arrow
+*.dta
+*.sav
+*.sas7bdat
+
+# Generated caches and temporary files
+.cache/
+.tmp/
+tmp/
+__pycache__/
+*.py[cod]
+.Rhistory
+.RData
+.Rproj.user/
+
+# Local environments
+.venv/
+venv/
+.env
+.env.*
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local paths, databases and temporary HPC output
+config/paths.local.toml
+*.sqlite
+*.sqlite3
+*.db
+*.duckdb
+*.key
+*.pem
+*.secret
+slurm-*.out
+*.log
+# Explicit small fixtures still require disclosure review
+!tests/fixtures/**/*.parquet
+!tests/fixtures/**/*.dta

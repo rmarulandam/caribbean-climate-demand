@@ -1,0 +1,12 @@
+# Copy to paths.local.toml; all relative values resolve from repository root.
+# Windows/Linux/macOS/HPC locations belong only in the ignored local copy.
+[raw]
+sui = "../external-data/sui"
+era5 = "../external-data/era5"
+engineering = "../external-data/engineering"
+[processed]
+intermediate = "../external-data/intermediate"
+releases = "../external-data/analysis-releases"
+[outputs]
+active = "../external-data/results"
+archive = "../external-data/run-archives"

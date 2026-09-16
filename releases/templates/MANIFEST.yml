@@ -1,0 +1,15 @@
+template: true
+schema_version: 1
+release: null
+status: candidate
+source_commit: null
+release_date: null
+data_release: null
+specification_version: null
+run_ids: []
+gate_evidence: {}
+human_approval: null
+allowed_uses: []
+prohibited_interpretations: []
+artifacts: []
+proposal_divergence: null

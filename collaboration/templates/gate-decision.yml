@@ -1,0 +1,11 @@
+template: true
+gate_id: null
+scope: null
+artifact_commit: null
+decision: pending
+evidence_packet: []
+unresolved_issues: []
+review_report: null
+human_approval: null
+supersedes: null
+amendment_reason: null

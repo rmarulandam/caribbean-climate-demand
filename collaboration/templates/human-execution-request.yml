@@ -1,0 +1,23 @@
+template: true
+request_id: null
+status: draft
+objective: null
+scientific_rationale: null
+required_git_commit: null
+required_data_release: null
+specification_version: null
+environment:
+  software: []
+  platform_constraints: null
+command_or_procedure: null
+expected_outputs: []
+validation_checks: []
+allowed_deviations: []
+forbidden_modifications:
+- Do not change sample, exposure, model or source data without a documented deviation
+  and approval.
+requested_by: null
+executor: null
+created_at: null
+due_at: null
+completed_at: null
