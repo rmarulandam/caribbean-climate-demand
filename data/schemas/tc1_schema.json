@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TC1_Subscriber_Technical_Attributes_Schema",
+  "description": "Validation schema for SUI 1732 (TC1) parameters",
+  "type": "object",
+  "required": [
+    "NIU",
+    "DANE_NIU",
+    "ESTRATO_SECTOR",
+    "UBICACION"
+  ],
+  "properties": {
+    "NIU": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Unique subscriber ID"
+    },
+    "CODIGO_CONEXION": {
+      "type": "string"
+    },
+    "NIVEL_TENSION": {
+      "type": "integer",
+      "enum": [1, 2, 3, 4]
+    },
+    "DANE_NIU": {
+      "type": "string",
+      "pattern": "^(08|13|20|23|44|47|70)[0-9]{3,6}$",
+      "description": "DANE municipality or center code starting with Caribbean department codes"
+    },
+    "UBICACION": {
+      "type": "string",
+      "enum": ["U", "R", "URBANO", "RURAL", "RURAL DISPERSO", "CABECERA MUNICIPAL"]
+    },
+    "ESTRATO_SECTOR": {
+      "type": ["integer", "string"],
+      "description": "Residential stratum 1 to 6 or commercial/industrial codes"
+    },
+    "COD_CIRCUITO_LINEA": {
+      "type": "string"
+    },
+    "COD_TRANSFORMADOR": {
+      "type": "string"
+    },
+    "EMPRESA": {
+      "type": "string"
+    }
+  }
+}

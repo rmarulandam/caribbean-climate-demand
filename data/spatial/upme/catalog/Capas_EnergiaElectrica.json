@@ -1,0 +1,142 @@
+{
+  "currentVersion": 11.5,
+  "folders": [],
+  "services": [
+    {
+      "name": "Capas_EnergiaElectrica/capacidad_asignada",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/capacidad_asignada",
+      "type": "MapServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/comunidades_energeticas_postuladas",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/comunidades_energeticas_postuladas",
+      "type": "MapServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/convocatorias__subestaciones",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/convocatorias__subestaciones",
+      "type": "MapServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/convocatorias_lineas_transmision",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/convocatorias_lineas_transmision",
+      "type": "MapServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/convocatorias_otros_proyectos",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/convocatorias_otros_proyectos",
+      "type": "MapServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/indice_cobertura_energia_electrica_depto",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/indice_cobertura_energia_electrica_depto",
+      "type": "MapServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/indice_cobertura_energia_electrica_mpio",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/indice_cobertura_energia_electrica_mpio",
+      "type": "MapServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/plan_indicativo_expansion_cobertura",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/plan_indicativo_expansion_cobertura",
+      "type": "MapServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/proyectos_generacion_xm",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/proyectos_generacion_xm",
+      "type": "MapServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/proyectos_unificados_6gw",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/proyectos_unificados_6gw",
+      "type": "MapServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/puntos_carga",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/puntos_carga",
+      "type": "MapServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/sistema_transmision_apoyo_construido",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/sistema_transmision_apoyo_construido",
+      "type": "MapServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/Sistema_transmision_lineas_construidas",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/Sistema_transmision_lineas_construidas",
+      "type": "MapServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/sistema_transmision_subestaciones_construidas",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/sistema_transmision_subestaciones_construidas",
+      "type": "MapServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/Índice_de_Cobertura_de_Energía_Eléctrica_Departamento_Histórico",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/Índice_de_Cobertura_de_Energía_Eléctrica_Departamento_Histórico",
+      "type": "MapServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/Índice_de_Cobertura_de_Energía_Eléctrica_Municipios_Histórico",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/Índice_de_Cobertura_de_Energía_Eléctrica_Municipios_Histórico",
+      "type": "MapServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/Índice_de_Cobertura_de_Energía_Eléctrica_Nacional_Histórico",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Capas_EnergiaElectrica/Índice_de_Cobertura_de_Energía_Eléctrica_Nacional_Histórico",
+      "type": "MapServer"
+    }
+  ]
+}

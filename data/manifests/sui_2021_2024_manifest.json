@@ -1,0 +1,308 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "project": "caribbean-climate-demand",
+  "regime": "CREG 015/2018",
+  "years": [
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "operators": [
+    {
+      "name": "Afinia (CaribeMar de la Costa S.A.S. E.S.P.)",
+      "departments": [
+        "Bolivar",
+        "Cesar",
+        "Cordoba",
+        "Sucre",
+        "Magdalena (Sur)"
+      ]
+    },
+    {
+      "name": "Air-e (Air-e S.A.S. E.S.P.)",
+      "departments": [
+        "Atlantico",
+        "Magdalena",
+        "La Guajira"
+      ]
+    }
+  ],
+  "datasets": [
+    {
+      "code": "1732",
+      "format": "TC1",
+      "description": "Parametros Tecnicos y Ubicacion del Usuario (Anual)",
+      "files": [
+        {
+          "year": 2021,
+          "filename": "ENERGIA_1732_2021.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2022,
+          "filename": "ENERGIA_1732_2022.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2023,
+          "part": 1,
+          "filename": "ENERGIA_1732_2023_1.zip",
+          "drive_file_id": "1YGqw8hAGsiHRE6bG-T6FsAwsDQW4pPRB",
+          "sha256": "de691d8d43e4db274b0140f8850a70963007b0341f737d51107d466cc11b430c",
+          "status": "available_locally"
+        },
+        {
+          "year": 2023,
+          "part": 2,
+          "filename": "ENERGIA_1732_2023_2.zip",
+          "drive_file_id": "1GwlWRb4rh3FfItbQc7imFJAlJEezKUWk",
+          "sha256": "fc2f8b991fb8fc383454b7dfd919c6b4bb83b876578c2ca7658238cc642b05b9",
+          "status": "available_locally"
+        },
+        {
+          "year": 2023,
+          "part": 3,
+          "filename": "ENERGIA_1732_2023_3.zip",
+          "drive_file_id": "1IG5yoHvzWGai-MI4oZtDBFQxzMXLizLg",
+          "sha256": "28dfe79d41681d8ab4ed843a6f65db56884f382705fdb97e2510b5b5399381b2",
+          "status": "available_locally"
+        },
+        {
+          "year": 2023,
+          "part": 4,
+          "filename": "ENERGIA_1732_2023_4.zip",
+          "drive_file_id": "1xe69Y834CKU-DAdlxf4vSftWZO7x0pXy",
+          "sha256": "24c612d8c25817f5d114e1021b61346de2067eaea28d2e51cb7d5a81ea511069",
+          "status": "available_locally"
+        },
+        {
+          "year": 2023,
+          "part": 5,
+          "filename": "ENERGIA_1732_2023_5.zip",
+          "drive_file_id": "1eL-hIN9rgkC6_teUjsyO_K5577hrqMfe",
+          "sha256": "8a1d464bf10c63169a6374789d89007406601a63b510373e18599db06bc030dd",
+          "status": "available_locally"
+        },
+        {
+          "year": 2023,
+          "part": 6,
+          "filename": "ENERGIA_1732_2023_6.zip",
+          "drive_file_id": "1YT-SYdCHVNEAzzFlQtZKHGpn-MJyi3gI",
+          "sha256": "6a01d256e7c863079c182f8826c89f3bfa8d2fc27d16d4f0b7bd3997086cdf95",
+          "status": "available_locally"
+        },
+        {
+          "year": 2024,
+          "filename": "ENERGIA_1732_2024.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        }
+      ]
+    },
+    {
+      "code": "1743",
+      "format": "TC2",
+      "description": "Facturacion y Consumo por NIU (Mensual/Particiones)",
+      "files": [
+        {
+          "year": 2021,
+          "part": 1,
+          "filename": "ENERGIA_1743_2021_1.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2021,
+          "part": 2,
+          "filename": "ENERGIA_1743_2021_2.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2021,
+          "part": 3,
+          "filename": "ENERGIA_1743_2021_3.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2021,
+          "part": 4,
+          "filename": "ENERGIA_1743_2021_4.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2021,
+          "part": 5,
+          "filename": "ENERGIA_1743_2021_5.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2021,
+          "part": 6,
+          "filename": "ENERGIA_1743_2021_6.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2022,
+          "part": 1,
+          "filename": "ENERGIA_1743_2022_1.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2022,
+          "part": 2,
+          "filename": "ENERGIA_1743_2022_2.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2022,
+          "part": 3,
+          "filename": "ENERGIA_1743_2022_3.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2022,
+          "part": 4,
+          "filename": "ENERGIA_1743_2022_4.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2022,
+          "part": 5,
+          "filename": "ENERGIA_1743_2022_5.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2022,
+          "part": 6,
+          "filename": "ENERGIA_1743_2022_6.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2023,
+          "part": 1,
+          "filename": "ENERGIA_1743_2023_1.zip",
+          "drive_file_id": "1rpKyX85uIPWw5-pS_eCdv_1rsw7sKvas",
+          "sha256": "d337dc4d6f91f68f39670793e53386419ff1f14dd6073bb85a3858701c1b4686",
+          "status": "available_locally"
+        },
+        {
+          "year": 2023,
+          "part": 2,
+          "filename": "ENERGIA_1743_2023_2.zip",
+          "drive_file_id": "1wqKgVZ7EDbinmhooif6kJHX-RIp7Vmmw",
+          "sha256": "df2f4ef798d2c4162684e63a904169ce0bd806a86c88e6bc07c3b67a3021d935",
+          "status": "available_locally"
+        },
+        {
+          "year": 2023,
+          "part": 3,
+          "filename": "ENERGIA_1743_2023_3.zip",
+          "drive_file_id": "1lcJpxAiS9lWMEUKGjXk16WOjpTEmhNYe",
+          "sha256": "523edfd0f8dbc4ddc590269cb092e73099943be2fc6ac260f85deb73ae8a8ea5",
+          "status": "available_locally"
+        },
+        {
+          "year": 2023,
+          "part": 4,
+          "filename": "ENERGIA_1743_2023_4.zip",
+          "drive_file_id": "19XpFIxBtmD6iT3x-tujgcBpdeOfw-T1m",
+          "sha256": "6fee52447dd22685f268edb55c012d1e0f74e0ec423c291222a76721d2bb14f5",
+          "status": "available_locally"
+        },
+        {
+          "year": 2023,
+          "part": 5,
+          "filename": "ENERGIA_1743_2023_5.zip",
+          "drive_file_id": "1Jst0aMTt-cBGirL8mRciXu15wEW7l4A-",
+          "sha256": "9780223b8ec382b3f55b22b8e7e36d948fdb13c54227bade50ae2ac55e4f84fd",
+          "status": "available_locally"
+        },
+        {
+          "year": 2023,
+          "part": 6,
+          "filename": "ENERGIA_1743_2023_6.zip",
+          "drive_file_id": "1gsWFhYHYsBaQ9O9x5MHghAqRTDSDtpDs",
+          "sha256": "84a17b048ee495f33c6270952529a803145da8cfbc93b0684137526e9ba193f8",
+          "status": "available_locally"
+        },
+        {
+          "year": 2024,
+          "part": 1,
+          "filename": "ENERGIA_1743_2024_1.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2024,
+          "part": 2,
+          "filename": "ENERGIA_1743_2024_2.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2024,
+          "part": 3,
+          "filename": "ENERGIA_1743_2024_3.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2024,
+          "part": 4,
+          "filename": "ENERGIA_1743_2024_4.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2024,
+          "part": 5,
+          "filename": "ENERGIA_1743_2024_5.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        },
+        {
+          "year": 2024,
+          "part": 6,
+          "filename": "ENERGIA_1743_2024_6.zip",
+          "drive_file_id": "",
+          "sha256": "",
+          "status": "pending_download"
+        }
+      ]
+    }
+  ]
+}

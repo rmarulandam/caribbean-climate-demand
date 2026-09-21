@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TC2_Subscriber_Billing_Transaction_Schema",
+  "description": "Validation schema for SUI 1743 (TC2) monthly billing records",
+  "type": "object",
+  "required": [
+    "NIU",
+    "FCH_LECTURA_ANT",
+    "FCH_LECTURA_ACT",
+    "CAR_T1743_DIAS_FACTURADOS",
+    "CONS_USUARIO",
+    "TIPO_LECTURA"
+  ],
+  "properties": {
+    "NIU": {
+      "type": "string",
+      "minLength": 1
+    },
+    "ID_FACTURA": {
+      "type": "string"
+    },
+    "FCH_LECTURA_ANT": {
+      "type": "string",
+      "description": "Previous meter reading date"
+    },
+    "FCH_LECTURA_ACT": {
+      "type": "string",
+      "description": "Current meter reading date"
+    },
+    "CAR_T1743_DIAS_FACTURADOS": {
+      "type": "integer",
+      "minimum": 25,
+      "maximum": 35,
+      "description": "Standard billing cycle days"
+    },
+    "TIPO_LECTURA": {
+      "type": "string",
+      "enum": ["REAL", "R"],
+      "description": "Must be REAL meter reading for climate demand estimation"
+    },
+    "CONS_USUARIO": {
+      "type": "number",
+      "minimum": 0.01,
+      "maximum": 5000.0,
+      "description": "Active monthly electricity consumption in kWh"
+    },
+    "CONS_SUBSIST": {
+      "type": "number",
+      "minimum": 0.0
+    },
+    "VAL_FACT_CU": {
+      "type": "number",
+      "minimum": 0.0
+    }
+  }
+}

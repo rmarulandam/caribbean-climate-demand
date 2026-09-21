@@ -1,12 +1,48 @@
-# Copy to paths.local.toml; all relative values resolve from repository root.
-# Windows/Linux/macOS/HPC locations belong only in the ignored local copy.
+# Configuration template for caribbean-climate-demand
+# Copy this file to paths.local.toml to set machine-specific paths for your workstation.
+# paths.local.toml is ignored by Git and will not be shared.
+
+# ==============================================================================
+# 1. Google Drive Raw Store (Primary Recommended Mode)
+# ==============================================================================
+# Set drive_root to the absolute path where your Google Drive folder is synced locally.
+# Under this root, the project expects:
+#   00_raw_sui/             (SUI microdata national ZIPs: via_a_moderno_creg015, via_b_historico_creg097)
+#   01_raw_climate_era5/    (ERA5-Land hourly NetCDF files)
+#   02_raw_spatial_gis/     (DANE MGN, UPME network layers)
+#   03_intermediate/        (Central shared Parquet extracts: sui_caribe_f2_clean.parquet, etc.)
+#
+# Examples by Operating System:
+#   Windows: drive_root = "E:/My Drive/Caribbean_Climate_Demand_Raw_Store"
+#            drive_root = "G:/Shared drives/caribbean-climate-demand-data"
+#   macOS:   drive_root = "/Users/username/Google Drive/My Drive/Caribbean_Climate_Demand_Raw_Store"
+#   Linux:   drive_root = "/home/username/gdrive/Caribbean_Climate_Demand_Raw_Store"
+
+drive_root = "E:/My Drive/Caribbean_Climate_Demand_Raw_Store"
+
+# ==============================================================================
+# 2. Granular Raw Path Overrides (Optional)
+# ==============================================================================
+# If raw directories are split across different drives or local folders:
 [raw]
-sui = "../external-data/sui"
-era5 = "../external-data/era5"
-engineering = "../external-data/engineering"
-[processed]
-intermediate = "../external-data/intermediate"
-releases = "../external-data/analysis-releases"
+# sui = "E:/My Drive/Caribbean_Climate_Demand_Raw_Store/00_raw_sui"
+# era5 = "E:/My Drive/Caribbean_Climate_Demand_Raw_Store/01_raw_climate_era5"
+# gis = "E:/My Drive/Caribbean_Climate_Demand_Raw_Store/02_raw_spatial_gis"
+
+# ==============================================================================
+# 3. Managed Repository Paths (Relative to repository root)
+# ==============================================================================
+[managed]
+tariffs = "data/tariffs"             # Git LFS managed
+spatial = "data/spatial"             # Git LFS managed
+intermediate = "data/intermediate"   # Local intermediate cache (ignored in Git)
+releases = "data/releases"           # Git LFS managed
+
+# ==============================================================================
+# 4. Outputs & Results
+# ==============================================================================
 [outputs]
-active = "../external-data/results"
-archive = "../external-data/run-archives"
+results = "results"
+figures = "results/figures"
+tables = "results/tables"
+archive = "results/run-archives"

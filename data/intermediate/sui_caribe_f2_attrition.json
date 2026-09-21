@@ -1,0 +1,108 @@
+{
+  "track": "Vía B / SUI Formato 2 (439)",
+  "filters": {
+    "standard_billing_days_inclusive": [
+      25,
+      35
+    ],
+    "required_reading_type": "R",
+    "consumption_rule": "numeric and finite; zero/negative values retained and reported",
+    "date_rule": "parseable billing start date between 2000-01-01 and 2030-12-31"
+  },
+  "climate_interval": {
+    "convention": "closed interval [T_INICIO, T_FIN]",
+    "formula": "T_FIN = T_INICIO + F2_DIAS_FACTURADOS - 1 day"
+  },
+  "inputs": [
+    "D:\\repos\\master-tesis-economy\\economics-research-program\\caribbean-climate-demand\\data\\intermediate\\sui_caribe_f2_2018.parquet",
+    "D:\\repos\\master-tesis-economy\\economics-research-program\\caribbean-climate-demand\\data\\intermediate\\sui_caribe_f2_2019.parquet",
+    "D:\\repos\\master-tesis-economy\\economics-research-program\\caribbean-climate-demand\\data\\intermediate\\sui_caribe_f2_2020.parquet"
+  ],
+  "output": "D:\\repos\\master-tesis-economy\\economics-research-program\\caribbean-climate-demand\\data\\intermediate\\sui_caribe_f2_clean.parquet",
+  "by_year": [
+    {
+      "source_year": 2018,
+      "input_rows": 14431191,
+      "standard_cycle_rows": 13897461,
+      "dropped_nonstandard_or_invalid_days": 533730,
+      "real_reading_rows_after_cycle_filter": 9738801,
+      "dropped_non_real_after_cycle_filter": 4158660,
+      "numeric_consumption_rows_after_quality_filters": 9738801,
+      "dropped_invalid_consumption_after_quality_filters": 0,
+      "valid_interval_rows": 9738801,
+      "dropped_invalid_start_date": 0,
+      "output_rows": 9738801,
+      "zero_consumption_output_rows": 550150,
+      "negative_consumption_output_rows": 0,
+      "reading_type_counts_all_rows": {
+        "E": 1276770,
+        "N": 3271394,
+        "R": 9883027
+      },
+      "retention_rate": 0.6748438850265374
+    },
+    {
+      "source_year": 2019,
+      "input_rows": 28099575,
+      "standard_cycle_rows": 27151675,
+      "dropped_nonstandard_or_invalid_days": 947900,
+      "real_reading_rows_after_cycle_filter": 18887332,
+      "dropped_non_real_after_cycle_filter": 8264343,
+      "numeric_consumption_rows_after_quality_filters": 18887332,
+      "dropped_invalid_consumption_after_quality_filters": 0,
+      "valid_interval_rows": 18887329,
+      "dropped_invalid_start_date": 3,
+      "output_rows": 18887329,
+      "zero_consumption_output_rows": 887762,
+      "negative_consumption_output_rows": 0,
+      "reading_type_counts_all_rows": {
+        "E": 2388761,
+        "N": 6511419,
+        "R": 19199395
+      },
+      "retention_rate": 0.672157105578999
+    },
+    {
+      "source_year": 2020,
+      "input_rows": 12348129,
+      "standard_cycle_rows": 11230166,
+      "dropped_nonstandard_or_invalid_days": 1117963,
+      "real_reading_rows_after_cycle_filter": 7715341,
+      "dropped_non_real_after_cycle_filter": 3514825,
+      "numeric_consumption_rows_after_quality_filters": 7715341,
+      "dropped_invalid_consumption_after_quality_filters": 0,
+      "valid_interval_rows": 7715341,
+      "dropped_invalid_start_date": 0,
+      "output_rows": 7715341,
+      "zero_consumption_output_rows": 489181,
+      "negative_consumption_output_rows": 0,
+      "reading_type_counts_all_rows": {
+        "E": 1070427,
+        "N": 3493901,
+        "R": 7783801
+      },
+      "retention_rate": 0.6248186263684158
+    }
+  ],
+  "overall": {
+    "source_year": 0,
+    "input_rows": 54878895,
+    "standard_cycle_rows": 52279302,
+    "dropped_nonstandard_or_invalid_days": 2599593,
+    "real_reading_rows_after_cycle_filter": 36341474,
+    "dropped_non_real_after_cycle_filter": 15937828,
+    "numeric_consumption_rows_after_quality_filters": 36341474,
+    "dropped_invalid_consumption_after_quality_filters": 0,
+    "valid_interval_rows": 36341471,
+    "dropped_invalid_start_date": 3,
+    "output_rows": 36341471,
+    "zero_consumption_output_rows": 1927093,
+    "negative_consumption_output_rows": 0,
+    "reading_type_counts_all_rows": {
+      "E": 4735958,
+      "N": 13276714,
+      "R": 36866223
+    },
+    "retention_rate": 0.6622121491331048
+  }
+}

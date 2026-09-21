@@ -1,0 +1,13 @@
+{
+  "type": "egdb",
+  "path": "/enterpriseDatabases/SIN_CIRCUITO_CONS_STR",
+  "info": {
+    "isManaged": false,
+    "connectionString": "SERVER=GEO11;INSTANCE=sde:oracle11g:GEO11;DBCLIENT=oracle;DB_CONNECTION_PROPERTIES=GEO11;PROJECT_INSTANCE=sde;USER=YBENAVIDES;VERSION=SDE.DEFAULT;AUTHENTICATION_MODE=DBMS",
+    "dataStoreConnectionType": "shared",
+    "portalProperties": {
+      "itemID": "7f0a2854881a42ad80c68d2a5b59bc3f"
+    }
+  },
+  "id": "7f0a2854881a42ad80c68d2a5b59bc3f"
+}

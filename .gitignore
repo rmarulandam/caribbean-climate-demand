@@ -1,13 +1,21 @@
 # Raw/private/large research data
 data/raw/
-data/intermediate/
+data/UNPROCESSED/
 data/private/
-*.parquet
+*.nc
+*.nc4
+*.grib
+*.grib2
+*.zip
+*.csv
 *.feather
 *.arrow
 *.dta
 *.sav
 *.sas7bdat
+
+# Default parquet ignore (un-ignored for Git LFS directories below)
+*.parquet
 
 # Generated caches and temporary files
 .cache/
@@ -18,6 +26,16 @@ __pycache__/
 .Rhistory
 .RData
 .Rproj.user/
+
+# LaTeX build artifacts
+*.aux
+*.out
+*.toc
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
 
 # Local environments
 .venv/
@@ -42,6 +60,21 @@ config/paths.local.toml
 *.secret
 slurm-*.out
 *.log
-# Explicit small fixtures still require disclosure review
+
+# Git LFS and repository data un-ignore rules
+!data/tariffs/*.xlsx
+!data/tariffs/*.xls
+!data/tariffs/*.csv
+!data/spatial/*.gpkg
+!data/spatial/*.geojson
+!data/intermediate/README.md
+!data/intermediate/*.json
+!data/releases/*.parquet
+!data/releases/README.md
+!data/manifests/**
+!data/dictionaries/**
+!data/schemas/**
+!data/spatial/**/*.csv
+!data/spatial/**/*.json
 !tests/fixtures/**/*.parquet
 !tests/fixtures/**/*.dta

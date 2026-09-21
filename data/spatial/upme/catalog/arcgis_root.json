@@ -1,0 +1,42 @@
+{
+  "currentVersion": 11.5,
+  "folders": [
+    "Capas_Coexistencia",
+    "Capas_Demanda",
+    "Capas_EnergiaElectrica",
+    "Capas_EnergiaElectrica_LATAM",
+    "Capas_Fondos",
+    "Capas_FuenteEnergia_Biomasa",
+    "Capas_FuenteEnergia_Eolica",
+    "Capas_FuenteEnergia_Geotermia",
+    "Capas_FuenteEnergia_Hidraulica",
+    "Capas_FuenteEnergia_Solar",
+    "Capas_Gas_LATAM",
+    "Capas_Hidrocarburos",
+    "Capas_MapaSocioAmbiental",
+    "Capas_Mineria",
+    "Capas_PERS",
+    "Capas_UPME_CartografiaSocial",
+    "Capas_UPME_General",
+    "Capas_ZonasNoInterconectadas",
+    "Geoprocesos",
+    "Hosted",
+    "Impresiones_Personalizadas",
+    "Pruebas_Borrar",
+    "SITIOSUPME",
+    "SUBESTACIONES",
+    "Tiles",
+    "Utilities",
+    "VIABILIDAD_WTE"
+  ],
+  "services": [
+    {
+      "name": "Tile_Caprinocultura",
+      "type": "FeatureServer"
+    },
+    {
+      "name": "Tile_Caprinocultura",
+      "type": "MapServer"
+    }
+  ]
+}

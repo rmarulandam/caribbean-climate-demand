@@ -1,0 +1,168 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{xcolor}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue!70!black,
+    urlcolor=blue!70!black
+}
+
+\title{\textbf{Plan de Trabajo: Depuración y Preparación de Datos SUI}\\
+\large Proyecto E: Clima y Demanda de Energía Eléctrica en el Caribe Colombiano (\texttt{caribbean-climate-demand})\\
+\large \textbf{Fase Data Gate E2}}
+\author{\textbf{Colaborador:} \texttt{Rafael Marulanda}\\
+\textbf{Destinatarios:} Equipo de Investigación (3 Colaboradores)}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Este documento establece la hoja de ruta metodológica
+para la ingesta, estandarización y depuración de las bases de datos 
+del Sistema Unificado de Información (SUI) de la Superintendencia de 
+Servicios Públicos Domiciliarios (SSPD). Con el fin de blindar el avance 
+científico del proyecto frente a restricciones de acceso público a los datos, 
+se adopta una \textbf{estrategia dual en paralelo}: (i) \textbf{Vía A (Régimen CREG 015/2018 / 2021--2024)}, 
+enfocada en los nuevos operadores Afinia y Air-e, supeditada a la completitud de lotes nacionales 
+solicitados mediante derecho de petición formal ante la SSPD; y (ii) \textbf{Vía B (Régimen CREG 097/2008 / 2018--2020 y serie histórica)}, 
+enfocada en el operador integrado \textit{Electricaribe} mediante los formatos históricos 
+Formato 2 (SUI 439) y Formato 1 (SUI 438), cuya ejecución es inmediata con datos ya disponibles localmente.
+Ambas ramas alimentan los criterios del \textbf{Gate E2}.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\section{Justificación Metodológica: Estrategia Dual de Estimación}
+
+Para asegurar la continuidad empírica y la robustez del análisis econométrico, 
+el plan de depuración no descarta ninguna fuente, sino que articula dos líneas de trabajo concurrentes:
+
+\subsection{Vía A: Régimen Post-2020 (CREG 015/2018 / 2021--2024)}
+\begin{enumerate}[label=\alph*.]
+    \item \textbf{Cobertura y Operadores:} Comprende los mercados de comercialización y distribución 
+    de \textbf{Afinia} (CaribeMar de la Costa S.A.S. E.S.P.) y \textbf{Air-e} (Air-e S.A.S. E.S.P.).
+    \item \textbf{Estructura Granular:} Se sustenta en los formatos transaccionales modernos:
+    \begin{itemize}
+        \item \textbf{TC2 (SUI 1743):} Facturación por suscriptor, con fechas exactas de lectura anterior y actual 
+        (\texttt{FCH\_LECTURA\_ANT}, \texttt{FCH\_LECTURA\_ACT}) y registro directo de \texttt{TIPO\_LECTURA} (\textit{Real} vs. \textit{Estimada}).
+        \item \textbf{TC1 (SUI 1732):} Parámetros técnicos, nivel de tensión, código de transformador y localización geográfica (\texttt{DANE\_NIU}).
+    \end{itemize}
+    \item \textbf{Estado de Disponibilidad y Gestión Institucional:} Dado que el portal público de datos 
+    abiertos únicamente cuenta con los lotes completos del año 2023, la completitud de los años 
+    2021, 2022 y 2024 se tramita mediante el \textbf{Derecho de Petición} formal radicado ante la SSPD 
+    (documentado en \texttt{docs/derch\_petic.pdf}). La infraestructura de código queda preparada para procesar 
+    dichos lotes de forma inmediata tan pronto sean suministrados.
+\end{enumerate}
+
+\subsection{Vía B: Régimen Histórico (CREG 097/2008 / 2018--2020 y Serie Extendida)}
+\begin{enumerate}[label=\alph*.]
+    \item \textbf{Operador Único Integrado:} Cubre los 7 departamentos de la región Caribe bajo la operación de 
+    \textbf{Electrificadora del Caribe S.A. E.S.P. (Electricaribe)}, eliminando el quiebre de mercado y la división 
+    territorial ocurrida tras la intervención y liquidación en octubre de 2020.
+    \item \textbf{Factibilidad Inmediata y Calidad de Medición (Formato 2 / SUI 439):}
+    \begin{itemize}
+        \item A diferencia de la creencia inicial, la auditoría empírica del encabezado de los microdatos de SUI 439 
+        demuestra que \textbf{sí se reporta la variable \texttt{Tipo de Lectura}} (\texttt{R} = Real, \texttt{E} = Estimada, \texttt{P} = Promedio), 
+        permitiendo aislar con total rigurosidad las observaciones de medición real.
+        \item Asimismo, el Formato 2 contiene directamente el \texttt{Estrato} socioeconómico (1 a 6) y la desagregación 
+        geográfica (\texttt{Codigo DANE}, \texttt{Departamento}, \texttt{Municipio}), agilizando la depuración.
+        \item \textbf{Reconstrucción de la Exposición Climática:} La ventana de exposición horaria (ERA5-Land) 
+        se construye determinísticamente a partir de la fecha de inicio del ciclo ($t_0$) y los días facturados ($D$): 
+        $[t_0, \; t_0 + D \text{ días}]$.
+    \end{itemize}
+    \item \textbf{Extensibilidad Histórica (Pre-2017):} Esta vía permite incorporar años anteriores (ej. 2014--2017) 
+    para evaluar eventos climáticos extremos de ciclo largo (como el Fenómeno de El Niño 2015--2016) y proveer 
+    un contrafactual limpio no contaminado por el choque de confinamiento COVID-19 de 2020.
+\end{enumerate}
+
+---
+
+\section{Estructura de Trabajo para los 3 Colaboradores (Ejecución Paralela)}
+
+La división de responsabilidades se organiza en tres frentes coordinados para atender ambas vías:
+
+\subsection{Colaborador 1: Ingesta, Descargas Masivas y Filtrado Regional Caribe}
+\begin{itemize}
+    \item \textbf{Línea Vía A (CREG 015 / 2021--2024):}
+    \begin{itemize}
+        \item Monitorear e incorporar los lotes nacionales solicitados en el derecho de petición indexados en \texttt{data/manifests/sui\_2021\_2024\_manifest.json}.
+        \item Filtrar Afinia y Air-e en \texttt{src/data/02\_filter\_caribe\_sui.py} y exportar a \texttt{data/intermediate/sui\_caribe\_tc1\_raw.parquet} y \texttt{sui\_caribe\_tc2\_raw.parquet}.
+    \end{itemize}
+    \item \textbf{Línea Vía B (CREG 097 / 2018--2020 y Pre-2017):}
+    \begin{itemize}
+        \item Catalogar los archivos históricos de Formato 2 (SUI 439) y Formato 1 (SUI 438) disponibles en \texttt{data/raw/sui/} (Google Drive \texttt{00\_raw\_sui/}) en el manifiesto \texttt{data/manifests/sui\_2018\_2020\_manifest.json}.
+        \item Implementar el filtrado de \textit{Electricaribe} (\texttt{ID\_EMPRESA == '2249'} oficial y \texttt{'2238'}, nombre del operador, o códigos DANE del Caribe: Atlántico, Bolívar, Cesar, Córdoba, La Guajira, Magdalena, Sucre).
+        \item Exportar los extractos regionales históricos a \texttt{data/intermediate/sui\_caribe\_f1\_raw.parquet} (77,4 millones de registros) y particiones anuales \texttt{sui\_caribe\_f2\_2018.parquet}, \texttt{sui\_caribe\_f2\_2019.parquet} y \texttt{sui\_caribe\_f2\_2020.parquet} (54,8 millones de transacciones).
+    \end{itemize}
+\end{itemize}
+
+\subsection{Colaborador 2: Depuración de Facturación, Ciclos y Consumo}
+\begin{itemize}
+    \item \textbf{Consistencia de Fechas y Ciclos Mensuales:} 
+    Restringir la muestra primaria a ciclos estándar de facturación mensual en ambas vías:
+    $$\text{\texttt{Dias Facturados}} \in [25, 35]$$
+    \item \textbf{Filtrado Estricto de Calidad de Lectura:}
+    \begin{itemize}
+        \item En Vía A (TC2): Exigir estrictamente $\text{\texttt{TIPO\_LECTURA}} == \text{'REAL'}$.
+        \item En Vía B (Formato 2): Exigir estrictamente $\text{\texttt{Tipo de Lectura}} == \text{'R'}$.
+        \item Aislar y reportar atrición de lecturas estimadas o promediadas en \texttt{src/data/03\_clean\_sui.py}.
+    \end{itemize}
+    \item \textbf{Construcción de la Variable Dependiente:} Calcular el consumo diario promedio normalizado para cada observación suscriptor-mes ($Y_{it}$ en kWh/día):
+    $$Y_{it} = \frac{\text{\texttt{Consumo}}_{it}}{\text{\texttt{Dias Facturados}}_{it}}$$
+    \item \textbf{Homologación del Intervalo Climático:} Generar para cada suscriptor el par ordenado de fechas $[t_{\text{inicio}}, t_{\text{fin}}]$ para acoplar la acumulación de grados-día de refrigeración (CDD) de ERA5-Land.
+    \item \textbf{Salida Intermediate:} Generar \texttt{data/intermediate/sui\_caribe\_tc2\_clean.parquet} (Vía A) y \texttt{data/intermediate/sui\_caribe\_f2\_clean.parquet} (Vía B).
+\end{itemize}
+
+\subsection{Colaborador 3: Limpieza Catastral, Estratificación y Red Eléctrica}
+\begin{itemize}
+    \item \textbf{Estabilidad Longitudinal de la Llave NIU:} Verificar la permanencia e invariancia temporal del 
+    Número de Identificación del Usuario (\texttt{NIU}) dentro del operador correspondiente.
+    \item \textbf{Sectorización Residencial:} Filtrar suscriptores de uso \textbf{Residencial} (\texttt{Estrato} 1 a 6), descartando sector comercial, industrial o provisional.
+    \item \textbf{Homologación Geográfica DANE:} Estandarizar la codificación municipal (5 dígitos) y de centros poblados (8 dígitos) para los 7 departamentos del Caribe.
+    \item \textbf{Topología de Red y GIS:} Cruzar identificadores de circuitos y transformadores de distribución con los datos espaciales UPME en \texttt{data/spatial/}.
+    \item \textbf{Salida Intermediate:} Generar \texttt{data/intermediate/sui\_caribe\_tc1\_clean.parquet} (Vía A) y \texttt{data/intermediate/sui\_caribe\_f1\_clean.parquet} (Vía B).
+\end{itemize}
+
+---
+
+\section{Cronograma de Entregables (Ejecución Paralela)}
+
+\begin{table}[h!]
+\centering
+\caption{Cronograma de Hitos de Depuración y Ensamble SUI (Régimen Dual)}
+\label{tab:cronograma}
+\begin{tabular}{@{}lllp{7.2cm}@{}}
+\toprule
+\textbf{Hito} & \textbf{Plazo} & \textbf{Responsable} & \textbf{Entregable Concreto} \\ \midrule
+H1 & Semana 1 & Colaborador 1 & Extracción regional de Formato 2 y Formato 1 (2018--2020 / histórico) a Parquet; manifiesto con hashes; monitoreo de respuesta a derecho de petición 2021--2024. \\
+H2 & Semana 2 & Colaborador 2 & Base depurada de facturación (\texttt{sui\_caribe\_f2\_clean.parquet} y \texttt{tc2\_clean}) con lecturas reales y consumo diario normalizado. \\
+H3 & Semana 2 & Colaborador 3 & Base de atributos de usuarios (\texttt{sui\_caribe\_f1\_clean.parquet} y \texttt{tc1\_clean}) con estrato validado y códigos DANE. \\
+H4 & Semana 3 & Equipo Conjunto & Agregación climática ERA5-Land adaptada al intervalo de ciclo e integración de tarifas CREG CU. \\
+H5 & Semana 3 & \texttt{econ-research-director} & Matriz final analítica de estimación (\texttt{panel\_caribe\_2018\_2020\_v1.parquet} y esquema complementario 2021--2024) para revisión y aprobación \textbf{Gate E2}. \\ \bottomrule
+\end{tabular}
+\end{table}
+
+---
+
+\section{Criterios de Aceptación para el Gate E2}
+
+Para autorizar la liberación formal de datos (\textbf{Gate E2}), se debe verificar:
+\begin{enumerate}
+    \item \textbf{Trazabilidad Total:} Todo registro del panel final debe rastrearse a un archivo zip original registrado en los manifiestos JSON con checksum SHA-256.
+    \item \textbf{Calidad de Medición:} El 100\% de las observaciones del panel primario deben provenir de lecturas reales (\texttt{TIPO\_LECTURA == 'REAL'}).
+    \item \textbf{Reporte de Atrición Transparente:} Matriz explícita de pérdidas de observaciones por filtros aplicados (empresa, días facturados, lecturas estimadas, valores atípicos).
+    \item \textbf{Independencia Climática:} La muestra debe depurarse por completo \textbf{antes} de cruzar con datos de temperatura (ERA5-Land) para prevenir sesgo de selección o \textit{p-hacking}.
+\end{enumerate}
+
+\end{document}

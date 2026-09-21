@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "project": "caribbean-climate-demand",
+  "source": "ECMWF Copernicus Climate Data Store (CDS)",
+  "dataset": "reanalysis-era5-land",
+  "temporal_resolution": "hourly",
+  "spatial_resolution_degrees": 0.1,
+  "spatial_bounding_box": {
+    "north": 13.0,
+    "south": 7.5,
+    "west": -77.0,
+    "east": -71.0
+  },
+  "variables": [
+    {
+      "name": "2m_temperature",
+      "short_name": "t2m",
+      "raw_units": "K",
+      "target_units": "degC",
+      "description": "Temperature of air at 2m above the surface of land"
+    },
+    {
+      "name": "2m_dewpoint_temperature",
+      "short_name": "d2m",
+      "raw_units": "K",
+      "target_units": "degC",
+      "description": "Dewpoint temperature at 2m above the surface (used for relative humidity and Heat Index)"
+    },
+    {
+      "name": "surface_solar_radiation_downwards",
+      "short_name": "ssrd",
+      "raw_units": "J m**-2",
+      "target_units": "W m**-2",
+      "description": "Solar radiation accumulated over the hour"
+    },
+    {
+      "name": "total_precipitation",
+      "short_name": "tp",
+      "raw_units": "m",
+      "target_units": "mm",
+      "description": "Precipitation accumulated over the hour"
+    }
+  ],
+  "files": [
+    {
+      "year": 2021,
+      "filename": "era5_land_caribe_hourly_2021.nc",
+      "drive_file_id": "",
+      "sha256": "",
+      "status": "pending_download"
+    },
+    {
+      "year": 2022,
+      "filename": "era5_land_caribe_hourly_2022.nc",
+      "drive_file_id": "",
+      "sha256": "",
+      "status": "pending_download"
+    },
+    {
+      "year": 2023,
+      "filename": "era5_land_caribe_hourly_2023.nc",
+      "drive_file_id": "",
+      "sha256": "",
+      "status": "pending_download"
+    },
+    {
+      "year": 2024,
+      "filename": "era5_land_caribe_hourly_2024.nc",
+      "drive_file_id": "",
+      "sha256": "",
+      "status": "pending_download"
+    }
+  ]
+}
